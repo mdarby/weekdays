@@ -1,0 +1,33 @@
+h1. weekdays
+
+A Ruby on Rails gem that provides methods to work with 'weekdays' (ie. 5.weekdays_ago)
+
+h2. What it does
+
+weekdays extends Rails' Date, Time, DateTime, and Numeric ActiveSupport Core Extensions and gives you a handful of helpful methods that calculate spans of weekdays.
+
+h2. Requirements
+
+This gem ;)
+
+h2. How to Install
+
+<pre>sudo gem install mdarby-weekdays --source 'http://gems.github.com'</pre>
+
+h2. How to Use
+
+You can now do cool things like:
+
+<pre>
+Date.today.weekday? # => true
+5.weekdays_ago # => Tue Mar 24 10:46:42 -0400 2009
+11.weekdays_from_now # => Wed Apr 15 10:46:54 -0400 2009
+20.weekdays_from(Date.yesterday) # => Mon, 27 Apr 2009
+Date.today.weekdays_until(Date.tomorrow) # => 1
+</pre>
+
+h2. About the Author
+
+My name is "Matt Darby.":http://blog.matt-darby.com I’m an IT Manager and pro-web-dev at for "Dynamix Engineering":http://dynamix-ltd.com and hold a Master’s Degree in Computer Science from "Franklin University":http://www.franklin.edu in sunny "Columbus, OH.":http://en.wikipedia.org/wiki/Columbus,_Ohio
+
+Feel free to check out my "blog":http://blog.matt-darby.com or "recommend me":http://www.workingwithrails.com/person/10908-matt-darby
