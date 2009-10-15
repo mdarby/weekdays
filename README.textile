@@ -12,10 +12,10 @@ This gem ;)
 
 h2. How to Install
 
-<pre>sudo gem install mdarby-weekdays --source 'http://gems.github.com'</pre>
+<pre>sudo gem install weekdays --source 'http://gemcutter.com'</pre>
 
 Then add it to your environment.rb:
-<pre>config.gem "mdarby-weekdays", :lib => 'weekdays'</pre>
+<pre>config.gem "weekdays"</pre>
 
 h2. How to Use
 
