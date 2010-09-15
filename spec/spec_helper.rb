@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'activesupport'
+require 'active_support/all'
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'weekdays.rb')
 

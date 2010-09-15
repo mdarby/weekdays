@@ -18,6 +18,10 @@ module ActiveSupport #:nodoc:
   end
 end
 
+class Date
+  include ActiveSupport::CoreExtensions::Date::Calculations
+end
+
 module ActiveSupport #:nodoc:
   module CoreExtensions #:nodoc:
     module Time #:nodoc:
@@ -36,6 +40,10 @@ module ActiveSupport #:nodoc:
   end
 end
 
+class Time
+  include ActiveSupport::CoreExtensions::Time::Calculations
+end
+
 module ActiveSupport #:nodoc:
   module CoreExtensions #:nodoc:
     module DateTime #:nodoc:
@@ -48,6 +56,10 @@ module ActiveSupport #:nodoc:
       end
     end
   end
+end
+
+class Time
+  include ActiveSupport::CoreExtensions::DateTime::Calculations
 end
 
 module ActiveSupport #:nodoc:
@@ -89,4 +101,8 @@ module ActiveSupport #:nodoc:
       end
     end
   end
+end
+
+class Numeric
+  include ActiveSupport::CoreExtensions::Numeric::Time
 end
