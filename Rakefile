@@ -1,13 +1,52 @@
+require 'rubygems'
+require 'rake'
+
 begin
   require 'jeweler'
-  Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "weekdays"
-    gemspec.summary = "Provides methods to work with 'weekdays' (ie. 5.weekdays_ago)"
-    gemspec.description = "Provides methods to work with 'weekdays' (ie. 5.weekdays_ago)"
-    gemspec.email = "matt@matt-darby.com"
-    gemspec.homepage = "http://github.com/mdarby/weekdays"
-    gemspec.authors = ["Matt Darby"]
+  Jeweler::Tasks.new do |gem|
+    gem.name = "weekdays"
+    gem.summary = %Q{Provides methods to work with 'weekdays' (ie. 5.weekdays_ago)}
+    gem.description = %Q{Provides methods to work with 'weekdays' (ie. 5.weekdays_ago)}
+    gem.email = "matt@matt-darby.com"
+    gem.homepage = "http://github.com/mdarby/weekdays"
+    gem.authors = ["Matt Darby"]
+    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+end
+
+require 'rake/testtask'
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/test_*.rb'
+  test.verbose = true
+end
+
+begin
+  require 'rcov/rcovtask'
+  Rcov::RcovTask.new do |test|
+    test.libs << 'test'
+    test.pattern = 'test/**/test_*.rb'
+    test.verbose = true
   end
 rescue LoadError
-  puts "Jeweler not available. Install it with: gem install jeweler"
+  task :rcov do
+    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
+  end
+end
+
+task :test => :check_dependencies
+
+task :default => :test
+
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "weekdays #{version}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
 end
