@@ -16,8 +16,10 @@ Gem::Specification.new do |s|
     "README.textile"
   ]
   s.files = [
-    "MIT-LICENSE",
+    ".gitignore",
+     "MIT-LICENSE",
      "README.textile",
+     "Rakefile",
      "VERSION",
      "init.rb",
      "lib/weekdays.rb",
