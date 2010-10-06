@@ -2,6 +2,10 @@ h1. weekdays
 
 A Ruby on Rails gem that provides methods to work with 'weekdays' (ie. 5.weekdays_ago)
 
+h1. 1.0.1+ is Rails3 Only!
+
+If you're still stuck in Rails 2x land, please use the 1.0 release, otherwise you'll get some crazy stack overflow errors.
+
 h2. What it does
 
 weekdays extends Rails' Date, Time, DateTime, and Numeric ActiveSupport Core Extensions and gives you a handful of helpful methods that calculate spans of weekdays.
